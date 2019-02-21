@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<flow name="update-customer-printFlow" doc:id="8fdfe5a6-67eb-442d-aa6e-f8ece74f0da0" >
+		<logger level="INFO" doc:name="Logger" doc:id="e8226012-b3bc-432d-99d7-479aad179f51" message="update customer print enter"/>
+		<http:request method="PUT" doc:name="Request" doc:id="2b4e1b6d-12ce-4062-b5b0-3ef8156a57aa" config-ref="HTTP_Request_configuration" path="${https.path}/customer/updateprint">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Content-Type" : "application/json"
+}]]]></http:headers>
+			<http:query-params ><![CDATA[#[output application/java
+---
+{
+	"appUserID" : attributes.queryParams.appUserID
+}]]]></http:query-params>
+		</http:request>
+		<logger level="INFO" doc:name="Logger" doc:id="492904b4-3893-4016-a3ce-2a5f8b06ca83" message="update customer print exit"/>
+	</flow>
+</mule>

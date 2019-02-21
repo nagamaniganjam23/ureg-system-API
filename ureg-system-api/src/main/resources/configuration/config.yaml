@@ -1,0 +1,4 @@
+https:
+  host: "anypoint.mulesoft.com"
+  port: "443"
+  path: "/mocking/api/v1/links/41b5c4c0-c717-40bb-9d92-cf998d9c03c6"

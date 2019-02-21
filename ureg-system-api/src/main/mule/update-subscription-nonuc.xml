@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<flow name="update-subscription-nonucFlow" doc:id="557d51a1-1a9a-4971-8ce6-b0683ab84851" >
+		<logger level="INFO" doc:name="Logger" doc:id="6aeb7bc9-aa99-46e6-8302-d0927a72d850" message="update subscription non uc enter"/>
+		<http:request method="PUT" doc:name="Request" doc:id="516efa6b-796a-4afa-aa98-9c36c6a01105" config-ref="HTTP_Request_configuration" path="${https.path}/subscription/update" >
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Content-Type" : "application/json"
+}]]]></http:headers>
+			<http:query-params ><![CDATA[#[output application/java
+---
+{
+	"appUserID" : attributes.queryParams.appUserID
+}]]]></http:query-params>
+		</http:request>
+		<logger level="INFO" doc:name="Logger" doc:id="77e79694-f423-4910-b80b-f0460371ff09" message="update subscription nonuc exit"/>
+	</flow>
+</mule>

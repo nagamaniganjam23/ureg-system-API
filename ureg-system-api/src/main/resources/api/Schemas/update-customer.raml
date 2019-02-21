@@ -1,0 +1,60 @@
+#%RAML 1.0 DataType
+displayName: update customer
+type: object
+properties:
+  appUserId:
+    type: number
+    required: true
+  sapBusinessPartnerId:
+    type: number
+    required: false
+  countryCode:
+    type: string
+    maxLength: 2
+    required: true
+  displayName:
+    type: string
+    maxLength: 30
+    required: false
+  displayNameEditable:
+    type: boolean
+    required: false
+  email:
+    type: string
+    maxLength: 100
+    required: true
+  isEmailVerified:
+    type: boolean
+    required: true
+  firstName:
+    type: string
+    maxLength: 50
+    required: true
+  lastName:
+    type: string
+    maxLength: 50
+    required: true
+  resetPassword:
+    type: boolean
+    required: false
+  postalCode:
+    type: string
+    maxLength: 10
+    required: false
+  companyName:
+    type: string
+    maxLength: 512
+    required: false
+  jobTitle:
+    type: string
+    maxLength: 512
+    required: false
+  dobMonth:
+    type: number
+    maximum: 512
+    required: false
+  
+  
+  
+  
+  

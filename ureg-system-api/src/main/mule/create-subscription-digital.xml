@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<flow name="create-subscription-digitalFlow" doc:id="a0fa956e-7606-493f-84fc-9ccfaca1c64c" >
+		<logger level="INFO" doc:name="Logger" doc:id="de0ca7db-aae0-4e58-bd67-d407ea92e106" message="create subscription digital enter"/>
+		<http:request method="POST" doc:name="Request" doc:id="890a3fc6-36a4-4f99-aa91-f7503ebbacd2" config-ref="HTTP_Request_configuration" path="${https.path}/subscription/digitalSub"/>
+		<logger level="INFO" doc:name="Logger" doc:id="efa26627-b841-4f43-8287-f4c1b34cca88" message="create subscription digital exit"/>
+	</flow>
+</mule>

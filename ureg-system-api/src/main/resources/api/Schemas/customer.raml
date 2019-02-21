@@ -1,0 +1,126 @@
+#%RAML 1.0 DataType
+displayName: New Customer 
+type: object
+properties:
+  user:
+    type: string
+    required: false
+  appUserId:
+    type: number
+    required: false
+  sapBusinessPartnerId:
+    type: number
+    required: false
+  salesforceDigitalProfileId:
+    type: number
+    required: true
+  countryCode:
+    type: string
+    maxLength: 2
+    required: true
+  displayName:
+    type: string
+    maxLength: 30
+    required: false
+  displayNameEditable:
+    type: boolean
+    required: false
+  email:
+    type: string
+    maxLength: 100
+    required: true
+  isEmailVerified:
+    type: boolean
+    required: true
+  firstName:
+    type: string
+    maxLength: 50
+    required: true
+  lastName:
+    type: string
+    maxLength: 50
+    required: true
+  postalCode:
+    type: string
+    maxLength: 10
+    required: false
+  channelType:
+    type: string
+    required: false
+  channelName:
+    type: string
+    required: false
+  companyName:
+    type: string
+    maxLength: 512
+    required: false
+  jobTitle:
+    type: string
+    maxLength: 512
+    required: false
+  dobMonth:
+    type: number
+    maximum: 512
+    required: false
+  
+  sfdcSubscriptionId:
+    type: string
+    required: true
+  promoCode:
+    type: string
+    required: false
+  subscriptionType:
+    type: string
+    required: true
+  sapOfferCode:
+    type: number
+    required: true
+  channelType1:
+    type: string
+    required: true
+  channelName1:
+    type: string
+    required: true
+  publicationCode:
+    type: string
+    required: false
+  editionCode:
+    type: string
+    required: false
+  serviceTypeCode:
+    type: string
+    required: false
+  sapItemTypeCode:
+    type: string
+    required: false
+  itemTypeCode:
+    type: string
+    required: false
+  posex:
+    type: number
+    required: false
+  posnr:
+    type: number
+    required: false
+  startDate:
+    type: string
+    required: false
+  endDate:
+    type: string
+    required: false
+  billingFrequency:
+    type: string
+    required: false
+  autoRenewal:
+    type: boolean
+    required: false
+  phone:
+    type: string
+    required: false
+  billingAddress:
+    type: string
+    required: false
+  shippingAddress:
+    type: string
+    required: false
+

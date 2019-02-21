@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<flow name="create-customer-digitalFlow" doc:id="5085a85c-789e-4668-9fea-d9f7a14edb51" >
+		<logger level="INFO" doc:name="Logger" doc:id="9652815a-3c07-4dab-bdd8-1e2c9a802d8a" message="create customer digital enter"/>
+		<http:request method="POST" doc:name="Request" doc:id="afa073c4-0630-4f93-b108-cd082f5ec7b3" config-ref="HTTP_Request_configuration" path="${https.path}/customer/createdigital">
+			<http:query-params><![CDATA[#[output application/java
+---
+{
+	"appUserID" : "567"
+}]]]></http:query-params>
+		</http:request>
+		<logger level="INFO" doc:name="Logger" doc:id="534c82ea-56c6-4baf-a605-346145b9fc5e" message="create customer digital exit"/>
+	</flow>
+</mule>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<flow name="sync-subscriptionFlow" doc:id="05961ca7-8922-4a0e-b054-d29feee70a6b" >
+		<logger level="INFO" doc:name="Logger" doc:id="977554c6-0313-4370-9635-cebb3fdbefcb" message="sync subscription enter"/>
+		<http:request method="PUT" doc:name="Request" doc:id="48f96a08-d1e1-494c-a525-476fcae95ec3" config-ref="HTTP_Request_configuration" path="${https.path}/sync" >
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Content-Type" : "application/json"
+}]]]></http:headers>
+			<http:query-params ><![CDATA[#[output application/java
+---
+{
+	"appUserID" : attributes.queryParams.appUserID
+}]]]></http:query-params>
+		</http:request>
+		<logger level="INFO" doc:name="Logger" doc:id="d971fba8-5715-40b7-b207-4df2c2bfa733" message="sync subscription exit"/>
+	</flow>
+</mule>

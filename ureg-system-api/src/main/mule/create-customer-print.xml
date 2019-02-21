@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="7ec6e806-5ebd-4f7c-876b-8ebf7b4b913e" >
+		<http:request-connection protocol="HTTPS" host="${https.host}" port="${https.port}" />
+	</http:request-config>
+	<flow name="create-customer-printFlow" doc:id="ce7966f9-02d6-4b7c-8aa4-472a1d0531ae" >
+		<logger level="INFO" doc:name="Logger" doc:id="5241ba63-71ef-4c42-b64e-e772345ff6df" message="create customer print enter"/>
+		<http:request method="POST" doc:name="Request" doc:id="de04cf23-13b6-497a-b1d2-09c553812cdd" config-ref="HTTP_Request_configuration" path="${https.path}/customer/createprint">
+			<http:query-params ><![CDATA[#[output application/java
+---
+{
+	"appUserID" : "567"
+}]]]></http:query-params>
+		</http:request>
+		<logger level="INFO" doc:name="Logger" doc:id="73a175de-a3aa-49ca-8974-a75d9bf7b1ed" message="create customer print exit"/>
+	</flow>
+</mule>

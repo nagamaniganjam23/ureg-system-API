@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<flow name="create-subscription-printFlow" doc:id="9baaeeda-878f-4d6b-8f1b-ce5ced192484" >
+		<logger level="INFO" doc:name="Logger" doc:id="a9174b27-8e75-4419-a7a1-afd90ba9807e" message="create subscription print enter"/>
+		<http:request method="POST" doc:name="Request" doc:id="d33a60eb-7f37-484b-ac1f-9b018a4af59e" config-ref="HTTP_Request_configuration" path="${https.path}/subscription/printSub"/>
+		<logger level="INFO" doc:name="Logger" doc:id="92aa494e-b563-4d43-9d8e-87b614b8fc98" message="create subscription print exit"/>
+	</flow>
+</mule>
