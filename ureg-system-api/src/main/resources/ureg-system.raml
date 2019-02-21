@@ -7,16 +7,16 @@ traits:
   client-id-required: !include /api/Traits/client-id-enforcement.raml
   update: !include /api/Traits/put.raml 
 resourceTypes:
-  create-cust-Print: !include /api/ResourceTypes/create-print-cust.raml
-  create-cust-Digital: !include /api/ResourceTypes/create-cust-digital.raml
-  update-cust-print: !include /api/ResourceTypes/update-print-cust.raml
-  update-cust-Digital: !include /api/ResourceTypes/update-cust-digital.raml
-  create-sub-print: !include /api/ResourceTypes/create-print-sub.raml
-  create-sub-digital: !include /api/ResourceTypes/create-digital-sub.raml
+  create-cust-Print: !include /api/ResourceTypes/create-customer-print.raml 
+  create-cust-Digital: !include /api/ResourceTypes/create-customer-digital.raml
+  update-cust-print: !include /api/ResourceTypes/update-customer-print.raml
+  update-cust-Digital: !include /api/ResourceTypes/update-customer-digital.raml
+  create-sub-print: !include /api/ResourceTypes/create-subscription-print.raml
+  create-sub-digital: !include /api/ResourceTypes/create-subscription-digital.raml
   update-sub-complaints: !include /api/ResourceTypes/update-sub-complaints.raml
   update-sub-updates: !include /api/ResourceTypes/update-sub-updates.raml
   sync-customer-master: !include /api/ResourceTypes/sync-customer-master.raml
-  unclaimed-digital-subscription: !include /api/ResourceTypes/unclaimed-digital-sub.raml
+  unclaimed-digital-subscription: !include /api/ResourceTypes/unclaimed-digital-subscription.raml
   sync-sub: !include /api/ResourceTypes/sync-sub.raml
    
    
@@ -70,15 +70,15 @@ resourceTypes:
     
 /sync:
   description: sync customer master 
-  is: [client-id-required]
+  is: [client-id-required,update]
   type: sync-customer-master
 /unclaimed:
   description: unclaimed digital subcription
-  is: [client-id-required]
+  is: [client-id-required,update]
   type: unclaimed-digital-subscription
 /syncsub:
   description: Sync subscription
-  is: [client-id-required]
+  is: [client-id-required,update]
   type: sync-sub
     
 

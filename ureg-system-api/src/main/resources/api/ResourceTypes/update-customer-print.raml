@@ -1,8 +1,12 @@
 #%RAML 1.0 ResourceType
 put:
   description: updating customer for print
+  
   body:
-    application/json: 
+    application/json:
+      example: !include /api/Examples/update-customer.json
+      schema: !include /api/Schemas/update-customer.raml
+      
   responses: 
     200:
       body:

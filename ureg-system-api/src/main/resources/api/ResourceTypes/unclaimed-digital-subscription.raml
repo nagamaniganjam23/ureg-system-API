@@ -1,0 +1,96 @@
+#%RAML 1.0 ResourceType
+post:
+  description: create customer to ureg from mulesoft and appid is sent to sfdc 
+  body:
+    application/json:
+      example: !include /api/Examples/subscription.json
+      schema: !include /api/Schemas/subscription.raml  
+      
+      
+      
+  responses:
+    201:
+      body:
+        application/json:
+          example: !include ../Responses/response-201.json
+    400:
+      body:
+        application/json:
+           example: !include ../Responses/response-400.json
+    401:
+      body:
+        application/json:
+          example: !include ../Responses/response-401.json
+    403:
+      body:
+        application/json:
+           example: !include ../Responses/response-403.json
+    404:
+      body:
+        application/json:
+           example: !include ../Responses/response-404.json
+    405:
+      body:
+        application/json:
+           example: !include ../Responses/response-405.json
+    
+    412:
+      body:
+        application/json:
+           example: !include ../Responses/response-412.json
+    429:
+      body:
+        application/json:
+           example: !include ../Responses/response-429.json
+    500:
+      body:
+        application/json:
+         example: !include ../Responses/response-500.json
+
+put:
+  description: unclaimed digital subscription
+  
+  body:
+    application/json:
+      example: !include /api/Examples/unclaimed-digital-subscription.json
+      schema: !include /api/Schemas/unclaimed-digital-subscription.raml  
+      
+      
+  responses:
+    200:
+     body:
+       application/json:
+         example: !include ../Responses/response-200.json
+    400:
+      body:
+        application/json:
+          example: !include ../Responses/response-400.json
+    401:
+      body:
+        application/json:
+          example: !include ../Responses/response-401.json
+    403:
+      body:
+        application/json:
+          example: !include ../Responses/response-403.json
+    404:
+      body:
+        application/json:
+          example: !include ../Responses/response-404.json
+    405:
+      body:
+        application/json:
+          example: !include ../Responses/response-405.json
+    
+    412:
+      body:
+        application/json:
+          example: !include ../Responses/response-412.json
+    429:
+      body:
+        application/json:
+          example: !include ../Responses/response-429.json
+    500:
+     body:
+      application/json:
+        example: !include ../Responses/response-500.json

@@ -3,6 +3,10 @@ post:
   description: creating new digital subscription 
   body:
     application/json:
+      example: !include /api/Examples/subscription.json
+      schema: !include /api/Schemas/subscription.raml
+      
+      
   responses:
     201:
      body:

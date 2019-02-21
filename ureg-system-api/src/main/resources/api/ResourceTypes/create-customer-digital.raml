@@ -1,8 +1,13 @@
 #%RAML 1.0 ResourceType
+#uses:
+  #lib: /api/Schemas/customer.raml
 post:
-  description: creating new customer 
+  description: creating new customer for digital
   body:
     application/json:
+      example: !include /api/Examples/customer.json
+      schema: !include /api/Schemas/customer.raml 
+      #type: lib.myType
   responses:
     201:
      body:
