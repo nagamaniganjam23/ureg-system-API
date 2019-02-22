@@ -161,28 +161,10 @@ output application/json
         </ee:transform>
     </flow>
     <flow name="put:\unclaimed:ureg-system-config">
-        <ee:transform xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
-            <ee:message>
-                <ee:set-payload><![CDATA[%dw 2.0
-output application/json
----
-{
-  message: "updated successfully"
-}]]></ee:set-payload>
-            </ee:message>
-        </ee:transform>
+		<flow-ref doc:name="Flow Reference" doc:id="e518465b-a802-42fe-b0f4-ad83e5d7c9ed" name="unclaimed_digital_subscriptionFlow"/>
     </flow>
     <flow name="put:\subscription\update:ureg-system-config">
-        <ee:transform xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
-            <ee:message>
-                <ee:set-payload><![CDATA[%dw 2.0
-output application/json
----
-{
-  message: "updated successfully"
-}]]></ee:set-payload>
-            </ee:message>
-        </ee:transform>
+		<flow-ref doc:name="Flow Reference" doc:id="36bd04ef-9641-41b6-9271-165b909327be" name="update-subscription-nonucFlow"/>
     </flow>
     <flow name="put:\customer\updatedigital:ureg-system-config">
         <ee:transform xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
@@ -200,42 +182,15 @@ output application/json
 		<flow-ref doc:name="Flow Reference" doc:id="0726bcb3-c3c5-407a-a72a-352840aa9079" name="update-customer-printFlow"/>
     </flow>
     <flow name="post:\customer\createdigital:ureg-system-config">
-        <ee:transform xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
-            <ee:message>
-                <ee:set-payload><![CDATA[%dw 2.0
-output application/json
----
-{
-  message: "new request has been created"
-}]]></ee:set-payload>
-            </ee:message>
-        </ee:transform>
+		<flow-ref doc:name="Flow Reference" doc:id="09953d75-f3c6-4d71-83dd-313f9280871d" name="create-customer-digitalFlow"/>
     </flow>
     <flow name="post:\customer\createprint:ureg-system-config">
 		<flow-ref doc:name="create-customer-printFlow" doc:id="80ccf83b-8ad3-476d-9576-df48e6963e49" name="create-customer-printFlow"/>
     </flow>
     <flow name="post:\subscription\digitalSub:ureg-system-config">
-        <ee:transform xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
-            <ee:message>
-                <ee:set-payload><![CDATA[%dw 2.0
-output application/json
----
-{
-  message: "new request has been created"
-}]]></ee:set-payload>
-            </ee:message>
-        </ee:transform>
+		<flow-ref doc:name="Flow Reference" doc:id="807ea8d7-acc3-4f6b-9192-c3dd325e5871" name="create-subscription-digitalFlow"/>
     </flow>
     <flow name="post:\subscription\printSub:ureg-system-config">
-        <ee:transform xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
-            <ee:message>
-                <ee:set-payload><![CDATA[%dw 2.0
-output application/json
----
-{
-  message: "new request has been created"
-}]]></ee:set-payload>
-            </ee:message>
-        </ee:transform>
+		<flow-ref doc:name="Flow Reference" doc:id="9798eaca-7c47-4541-98a7-68769e11c014" name="create-subscription-printFlow"/>
     </flow>
 </mule>

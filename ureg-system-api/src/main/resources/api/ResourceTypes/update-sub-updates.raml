@@ -3,8 +3,11 @@
 put:
   description: updating subscription for updates
   
+  
   body:
-    application/json: 
+    application/json:
+      example: !include /api/Examples/update-subscription.json
+      schema: !include /api/Schemas/update-subscription.raml 
   responses: 
     200:
       body:

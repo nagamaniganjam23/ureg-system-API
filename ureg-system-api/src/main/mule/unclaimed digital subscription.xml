@@ -6,7 +6,7 @@
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
 	<flow name="unclaimed_digital_subscriptionFlow" doc:id="80b1db1c-5f20-49e7-be58-db156a20c18f" >
 		<logger level="INFO" doc:name="Logger" doc:id="1318d7dc-08e0-42a6-b9c6-2dc7e513cd40" message="unclaimed digital subscription enter"/>
-		<http:request method="CONNECT" doc:name="Request" doc:id="a502f9a2-ed29-4fc1-bae0-5a3ea59d0fd1" config-ref="HTTP_Request_configuration" path="${https.path}/unclaimed" >
+		<http:request method="PUT" doc:name="Request" doc:id="a502f9a2-ed29-4fc1-bae0-5a3ea59d0fd1" config-ref="HTTP_Request_configuration" path="${https.path}/unclaimed" >
 			<http:headers ><![CDATA[#[output application/java
 ---
 {
